@@ -9,10 +9,6 @@ public class FlappyBird extends GameBase
 	PipeManager pipes = new PipeManager();
 	Scenery     scenery = new Scenery();
 	
-	//
-	SoundEffect pointSound = new SoundEffect("../SFX/point.wav");
-	
-	
 	//scoreboard variables
 	int score     = 0;
 	int highScore = 0;
@@ -67,10 +63,6 @@ public class FlappyBird extends GameBase
 
 		bird.update();
 		score += pipes.update();
-		int passed = pipes.update();
-		if (passed > 0) {
-			pointSound.play();
-		}
 		if (score > highScore) {
 			highScore = score;
 		}
