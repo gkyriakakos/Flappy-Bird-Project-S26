@@ -8,6 +8,9 @@ public class PipeManager
 	private final ArrayList<Pipe> pipes = new ArrayList<Pipe>();
 	private final Random random = new Random();
 	
+	//grabs the sound effect for when pipes are passed
+	SoundEffect pointSound = new SoundEffect("../SFX/point.wav");
+	
 	public PipeManager()
 	{
 		reset();
@@ -49,6 +52,7 @@ public class PipeManager
 			{
 				p.scored = true;
 				points++;
+				pointSound.play();
 			}
 		}
 		return points;
